@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zeina Chebib · Telecom &amp; BSS Solution Engineer</title>
+<style>
+:root{--bg:#070b14;--bg2:#0d1424;--card:rgba(18,27,48,.72);--line:rgba(120,160,255,.18);--tx:#e8eefc;--tx2:#9fb0d3;--ac:#22d3ee;--ac2:#8b5cf6;--glow:0 0 32px rgba(34,211,238,.25);--grid:rgba(120,160,255,.06)}
+[data-theme=light]{--bg:#f5f8ff;--bg2:#e9effc;--card:rgba(255,255,255,.85);--line:rgba(40,70,160,.18);--tx:#0c1630;--tx2:#475a82;--ac:#0369a1;--ac2:#6d28d9;--glow:0 8px 30px rgba(3,105,161,.15);--grid:rgba(40,70,160,.07)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;transition:background .4s,color .4s;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0}
+#net{position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none}
+main,nav,footer{position:relative;z-index:1}
+nav{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line);z-index:10}
+nav .logo{font-weight:700;letter-spacing:.08em;color:var(--ac)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{color:var(--tx2);text-decoration:none;font-size:.88rem;transition:color .2s}nav a:hover{color:var(--ac)}
+.tog{border:1px solid var(--line);background:var(--card);color:var(--tx);padding:7px 14px;border-radius:99px;cursor:pointer;font-size:.82rem}
+.tog:hover{box-shadow:var(--glow)}
+section{padding:80px 5vw;max-width:1180px;margin:auto}
+.eyebrow{font-family:ui-monospace,Consolas,monospace;color:var(--ac);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:6px 0 28px}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;margin:10px 0;background:linear-gradient(100deg,var(--tx),var(--ac) 60%,var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .role{font-family:ui-monospace,Consolas,monospace;font-size:clamp(1rem,2vw,1.35rem);color:var(--tx2);min-height:1.8em}
+.hero .role b{color:var(--ac)}.cursor{display:inline-block;width:9px;height:1.1em;background:var(--ac);vertical-align:-3px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.lead{max-width:680px;margin:22px 0 30px;color:var(--tx2);font-size:1.08rem}
+.btn{display:inline-block;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;margin-right:12px;border:1px solid var(--ac);transition:.25s}
+.btn.p{background:var(--ac);color:var(--bg)}.btn.s{color:var(--ac)}.btn:hover{transform:translateY(-2px);box-shadow:var(--glow)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;backdrop-filter:blur(10px);transition:.3s}
+.card:hover{border-color:var(--ac);box-shadow:var(--glow);transform:translateY(-3px)}
+.stat .n{font-size:2.5rem;font-weight:800;color:var(--ac);font-family:ui-monospace,Consolas,monospace}
+.stat .l{color:var(--tx2);font-size:.88rem}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.tab{padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--tx2);cursor:pointer;font-size:.88rem;transition:.2s}
+.tab.on,.tab:hover{color:var(--bg);background:var(--ac);border-color:var(--ac)}
+.tl{position:relative;padding-left:30px;border-left:2px solid var(--line)}
+.role-i{position:relative;margin-bottom:18px;cursor:pointer}
+.role-i:before{content:"";position:absolute;left:-39px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--ac);transition:.3s}
+.role-i.open:before,.role-i:hover:before{background:var(--ac);box-shadow:0 0 14px var(--ac)}
+.role-i h3{font-size:1.1rem}.role-i .meta{color:var(--tx2);font-size:.85rem;font-family:ui-monospace,Consolas,monospace}
+.role-i ul{max-height:0;overflow:hidden;transition:max-height .5s ease;padding-left:18px;color:var(--tx2);font-size:.93rem}
+.role-i.open ul{max-height:600px;margin-top:10px}
+.role-i .hint{color:var(--ac);font-size:.78rem;margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer;font-size:.85rem}
+.chip.on{border-color:var(--ac);color:var(--ac);box-shadow:var(--glow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.grid .card{font-size:.92rem;color:var(--tx2)}.grid .card b{display:block;color:var(--tx);margin-bottom:4px}
+.grid .card .tag{font-family:ui-monospace,monospace;font-size:.72rem;color:var(--ac);text-transform:uppercase;letter-spacing:.1em}
+.card.hide{display:none}
+.stack{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+.layers{display:flex;flex-direction:column;gap:10px}
+.layer{padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;display:flex;justify-content:space-between;transition:.25s}
+.layer:hover,.layer.on{border-color:var(--ac);transform:translateX(6px);box-shadow:var(--glow)}
+.layer.on{color:var(--ac)}.layer span{font-family:ui-monospace,monospace;font-size:.75rem;color:var(--tx2)}
+#detail h3{color:var(--ac);margin-bottom:8px}#detail ul{padding-left:18px;color:var(--tx2)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.two h3{margin-bottom:10px;color:var(--ac);font-size:1rem}.two li{color:var(--tx2);margin-left:18px;font-size:.92rem}
+.cta{text-align:center;padding:90px 5vw}
+.cta h2{margin-bottom:12px}
+footer{text-align:center;color:var(--tx2);font-size:.78rem;padding:30px 5vw;border-top:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(24px);transition:.8s}.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){nav ul{display:none}.stack{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media print{#net,nav{display:none}}
+@page { size: auto !important; }
+</style>
+<meta name="glean-provenance" content="{&quot;generation_id&quot;:&quot;13cab3e89d6141e187ed719ca165948d.1&quot;,&quot;generated_at&quot;:&quot;2026-11-25T14:13:09Z&quot;,&quot;model&quot;:&quot;Glean Assistant 571.123&quot;}"></head>
+<body>
+<canvas id="net"></canvas>
+<nav><span class="logo">ZC//</span>
+<ul><li><a href="#journey">Journey</a></li><li><a href="#focus">What I do</a></li><li><a href="#stack">BSS landscape</a></li><li><a href="#creds">Credentials</a></li><li><a href="#connect">Connect</a></li></ul>
+<button class="tog" id="tog" aria-label="Toggle theme">☀ Light</button></nav>
+<main>
+<section class="hero">
+ <div class="eyebrow">// Telecom · BSS · Solution Engineering</div>
+ <h1>Zeina Chebib</h1>
+ <div class="role">Solution Engineer @ CSG &nbsp;|&nbsp; <b id="typed"></b><span class="cursor"></span></div>
+ <p class="lead">Telecom and Computer Engineer with 18+ years across a Tier-1 operator, a global network vendor and a leading BSS software company. I turn operator business needs into solutions that can actually be delivered. Based in Beirut, Lebanon.</p>
+ <div><a class="btn p" href="https://www.linkedin.com/in/zeina-chebib-19522891/" target="_blank" rel="noopener">Connect on LinkedIn</a><a class="btn s" href="#journey">Explore my journey ↓</a></div>
+</section>
+
+<section class="reveal"><div class="stats">
+ <div class="card stat"><div class="n" data-to="18" data-suf="+">0</div><div class="l">years in telecom &amp; technology</div></div>
+ <div class="card stat"><div class="n" data-to="12" data-suf="+">0</div><div class="l">years at Tier-1 operator &amp; vendor</div></div>
+ <div class="card stat"><div class="n" data-to="15" data-suf="+">0</div><div class="l">operator projects integrated &amp; led at Nokia</div></div>
+ <div class="card stat"><div class="n" data-to="3">0</div><div class="l">organizations: Nokia · touch · CSG</div></div>
+</div></section>
+
+<section id="journey" class="reveal">
+ <div class="eyebrow">// 01 · Career journey</div><h2>From network integration to BSS solutioning</h2>
+ <div class="tabs" id="jtabs"><button class="tab on" data-f="all">All</button><button class="tab" data-f="csg">CSG</button><button class="tab" data-f="touch">touch Lebanon</button><button class="tab" data-f="nokia">Nokia</button></div>
+ <div class="tl" id="tl">
+  <div class="role-i" data-o="csg"><h3>Solution Engineer · CSG</h3><div class="meta">May 2022 – Present</div>
+   <ul><li>Solution engineering for CSG's BSS software portfolio, working with operators and CSG product, engineering and delivery teams.</li><li>Bridges customer requirements and product capability: analysis, gap assessment and extension-point design.</li><li>Contributes to proposals, solution workshops and presentations for operator customers.</li></ul><div class="hint">▸ click to expand</div></div>
+  <div class="role-i" data-o="touch"><h3>Technology &amp; Innovation Chief Engineer · touch Lebanon</h3><div class="meta">Jan 2018 – Jun 2022 · Beirut</div>
+   <ul><li>Defined software, hardware and feature strategy and roadmap across Radio, Transmission, PS/CS, IT and BSS.</li><li>Presented new technologies (IoT, 5G, Cloud, digital transformation, cybersecurity) to Directors and CxOs.</li><li>Drove people, process and technology initiatives to improve end-to-end customer experience.</li><li>Partnered with product teams and technology vendors to evolve the network and meet business requirements.</li><li>Wrote technology papers, including on 5G.</li></ul><div class="hint">▸ click to expand</div></div>
+  <div class="role-i" data-o="touch"><h3>Core Network Chief Engineer · touch Lebanon</h3><div class="meta">Jan 2016 – Jan 2018</div>
+   <ul><li>Prepared Requests for Features (RFFs) and worked with technology partners to create value and revenue.</li><li>Led network analysis, gap analysis, improvement plans and new feature rollouts.</li><li>Defined quality assurance and test strategies for operations teams.</li></ul><div class="hint">▸ click to expand</div></div>
+  <div class="role-i" data-o="touch"><h3>VAS Senior Engineer · touch Lebanon</h3><div class="meta">Jun 2012 – Jan 2016</div>
+   <ul><li>Developed and managed VAS products; reported periodically to the CTO.</li><li>Wrote RFPs/RFIs, evaluated and scored proposals, and made final recommendations.</li><li>Planned, supervised and implemented key VAS projects.</li><li>Worked with Product Marketing and Commercial teams on feasibility studies and concept papers.</li></ul><div class="hint">▸ click to expand</div></div>
+  <div class="role-i" data-o="nokia"><h3>IN QA &amp; System Integration Engineer → Team Leader → Technical Project Consultant · Nokia</h3><div class="meta">Feb 2008 – Jul 2012</div>
+   <ul><li>System Integration lead for 15+ projects delivering NSN's online charging suite to Tier-1 and Tier-2 operators in MEA.</li><li>Helped operators design, deploy and launch products and marketing use cases.</li><li>Wrote and reviewed solution proposals, requirement specifications, roll-out concepts and migration procedures.</li><li>Provided effort estimates to Presales and Project Managers; supported solution definition and demos.</li></ul><div class="hint">▸ click to expand</div></div>
+ </div>
+</section>
+
+<section id="focus" class="reveal">
+ <div class="eyebrow">// 02 · What I do</div><h2>Disciplines I've worked across</h2>
+ <div class="chips" id="chips"><button class="chip on" data-f="all">All</button><button class="chip" data-f="Presales">Presales &amp; Solutioning</button><button class="chip" data-f="Delivery">Delivery &amp; Integration</button><button class="chip" data-f="Product">Product &amp; Roadmap</button><button class="chip" data-f="Strategy">Technology Strategy</button><button class="chip" data-f="Quality">Quality &amp; Process</button></div>
+ <div class="grid" id="grid">
+  <div class="card" data-c="Presales"><span class="tag">Presales</span><b>Solution definition &amp; proposals</b>Requirement specifications, solution proposals, demos and effort estimates.</div>
+  <div class="card" data-c="Presales"><span class="tag">Presales</span><b>RFP / RFI response &amp; evaluation</b>Writing and scoring RFPs/RFIs through to final recommendations.</div>
+  <div class="card" data-c="Delivery"><span class="tag">Delivery</span><b>System integration &amp; migration</b>Roll-out concepts, migration procedures and integration for operator projects.</div>
+  <div class="card" data-c="Delivery"><span class="tag">Delivery</span><b>Project planning &amp; supervision</b>Planning, supervising and reporting key projects (PMP trained).</div>
+  <div class="card" data-c="Product"><span class="tag">Product</span><b>Product management &amp; research</b>Managing VAS products, feasibility studies and concept papers.</div>
+  <div class="card" data-c="Product"><span class="tag">Product</span><b>Feature requests &amp; gap analysis</b>Translating customer needs into feature requests and extension points.</div>
+  <div class="card" data-c="Strategy"><span class="tag">Strategy</span><b>Technology roadmap</b>SW/HW/feature roadmaps across Radio, Transmission, Core, IT and BSS.</div>
+  <div class="card" data-c="Strategy"><span class="tag">Strategy</span><b>Executive technology briefings</b>5G, IoT, Cloud, cybersecurity and digital transformation for CxOs.</div>
+  <div class="card" data-c="Quality"><span class="tag">Quality</span><b>QA &amp; test strategy</b>Quality assurance and test strategies for operations teams.</div>
+  <div class="card" data-c="Quality"><span class="tag">Quality</span><b>Process enhancement</b>People, process and technology improvements for end-to-end customer experience.</div>
+ </div>
+</section>
+
+<section id="stack" class="reveal">
+ <div class="eyebrow">// 03 · Interactive</div><h2>Where I work in the BSS landscape</h2>
+ <div class="stack"><div class="layers" id="layers"></div>
+ <div class="card" id="detail"></div></div>
+</section>
+
+<section id="creds" class="reveal">
+ <div class="eyebrow">// 04 · Credentials</div><h2>Education, learning &amp; recognition</h2>
+ <div class="two">
+  <div class="card"><h3>Education</h3><ul><li><b>M.S., Computer &amp; Communication Engineering</b><br>University of Balamand, Lebanon (2002–2007)</li></ul></div>
+  <div class="card"><h3>Recognition</h3><ul><li>Zain's first online Datathon winner (data science &amp; analytics), a 12-hour competition among 42 female employees from all Zain countries</li><li>Zainiac Program: Zain start-up program for innovative ideas</li></ul></div>
+  <div class="card"><h3>Courses</h3><ul><li>PMP Project Management</li><li>Business Analytics &amp; Data Science</li><li>Design Thinking</li><li>HSS for IMS &amp; VoLTE (Nokia)</li><li>Women in Data Science (WiDS)</li><li>She Means Business (Facebook)</li></ul></div>
+  <div class="card"><h3>Technology exposure</h3><ul><li>BSS · Cloud · IoT · AI</li><li>3G/4G · Cybersecurity</li><li>Data Science · MobileTV · VAS</li></ul></div>
+ </div>
+</section>
+
+<section class="cta reveal" id="connect">
+ <div class="eyebrow">// 05 · Connect</div><h2>Let's talk telecom, BSS and what's next</h2>
+ <p style="color:var(--tx2);margin-bottom:26px">Open to conversations on BSS transformation, solution engineering and operator technology strategy.</p>
+ <a class="btn p" href="https://www.linkedin.com/in/zeina-chebib-19522891/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+</section>
+</main>
+<footer>© Zeina Chebib · Views expressed are my own.</footer>
+
+<script>
+const root=document.documentElement,tog=document.getElementById('tog');
+function setTheme(t){root.dataset.theme=t;tog.textContent=t==='dark'?'☀ Light':'☾ Dark';try{localStorage.setItem('zc-theme',t)}catch(e){}}
+let st=null;try{st=localStorage.getItem('zc-theme')}catch(e){}
+setTheme(st||'dark');tog.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+
+// typed roles
+const words=['BSS solutions','Telecom architecture','Operator transformation','Requirements to delivery'];let wi=0,ci=0,del=false;const ty=document.getElementById('typed');
+(function tick(){const w=words[wi];ty.textContent=w.slice(0,ci);if(!del&&ci===w.length){del=true;return setTimeout(tick,1500)}
+if(del&&ci===0){del=false;wi=(wi+1)%words.length}ci+=del?-1:1;setTimeout(tick,del?35:70)})();
+
+// network canvas
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let P=[];
+function rs(){cv.width=innerWidth;cv.height=innerHeight;P=Array.from({length:Math.min(70,Math.floor(innerWidth/18))},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
+rs();addEventListener('resize',rs);
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function draw(){cx.clearRect(0,0,cv.width,cv.height);const c=getComputedStyle(root).getPropertyValue('--ac').trim();cx.fillStyle=c;cx.strokeStyle=c;
+P.forEach((p,i)=>{if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1}
+cx.globalAlpha=.8;cx.beginPath();cx.arc(p.x,p.y,1.8,0,7);cx.fill();
+for(let j=i+1;j<P.length;j++){const q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.globalAlpha=(1-d/130)*.35;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}});
+if(!reduce)requestAnimationFrame(draw)}
+draw();
+
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-to]').forEach(c=>{if(c.dataset.d)return;c.dataset.d=1;const to=+c.dataset.to,suf=c.dataset.suf||'';let n=0;const s=setInterval(()=>{n+=Math.max(1,Math.ceil(to/30));if(n>=to){n=to;clearInterval(s)}c.textContent=n+suf},35)})}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+// timeline
+document.querySelectorAll('.role-i').forEach(r=>r.onclick=()=>r.classList.toggle('open'));
+document.querySelector('.role-i').classList.add('open');
+document.querySelectorAll('#jtabs .tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('#jtabs .tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+document.querySelectorAll('.role-i').forEach(r=>r.style.display=(t.dataset.f==='all'||r.dataset.o===t.dataset.f)?'':'none')});
+
+// focus filter
+document.querySelectorAll('#chips .chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('#chips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');
+document.querySelectorAll('#grid .card').forEach(k=>k.classList.toggle('hide',c.dataset.f!=='all'&&k.dataset.c!==c.dataset.f))});
+
+// BSS landscape
+const L=[
+['Channels & Customer Management','L1',['Customer-facing journeys and agent/CSR experience','Validation and extension points in customer data journeys']],
+['Quote & Order Management','L2',['Order capture and orchestration across retail and wholesale','Extension points for external fulfilment systems']],
+['Product Catalog','L3',['Offer and bundle modelling','Integration with third-party catalogs']],
+['Charging & Policy','L4',['Online/offline charging, balances and entitlements','Integration with charging systems (roots in my Nokia years)']],
+['Billing & Revenue Management','L5',['Invoicing, upfront charges and payments','Billing hierarchies for B2C, B2B and wholesale']],
+['Collections & Finance Integration','L6',['Data exchange with external collections platforms','Payment plans, reminders and credit status flowing back to the customer account']],
+['Mediation, Cloud & AI Ops','L7',['Usage data collection and mediation','Cloud and AI-driven operations in the portfolio']]];
+const lay=document.getElementById('layers'),det=document.getElementById('detail');
+function show(i){[...lay.children].forEach((e,k)=>e.classList.toggle('on',k===i));det.innerHTML='<h3>'+L[i][0]+'</h3><ul>'+L[i][2].map(x=>'<li>'+x+'</li>').join('')+'</ul><p style="margin-top:12px;font-size:.78rem;color:var(--tx2)">Illustrative BSS capability areas, not customer-specific scope.</p>'}
+L.forEach((l,i)=>{const d=document.createElement('div');d.className='layer';d.innerHTML=l[0]+'<span>'+l[1]+'</span>';d.onmouseenter=d.onclick=()=>show(i);lay.appendChild(d)});show(0);
+</script>
+
+
+<footer data-glean-ai-provenance="visible" role="contentinfo">Co-authored with AI from Glean · gen:13cab3e89d6141e187ed719ca165948d.1 · 2026-11-25T14:13:09Z</footer></body></html>
